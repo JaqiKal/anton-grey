@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/anton/static/css/main.42164467.css",
-    "main.js": "/anton/static/js/main.9afe789e.js",
+    "main.css": "/anton/static/css/main.1e898854.css",
+    "main.js": "/anton/static/js/main.12848cbe.js",
     "static/js/488.9db3aaa7.chunk.js": "/anton/static/js/488.9db3aaa7.chunk.js",
     "static/media/logo.webp": "/anton/static/media/logo.cb2b22bc3d711039ff03.webp",
     "index.html": "/anton/index.html",
-    "main.42164467.css.map": "/anton/static/css/main.42164467.css.map",
-    "main.9afe789e.js.map": "/anton/static/js/main.9afe789e.js.map",
+    "main.1e898854.css.map": "/anton/static/css/main.1e898854.css.map",
+    "main.12848cbe.js.map": "/anton/static/js/main.12848cbe.js.map",
     "488.9db3aaa7.chunk.js.map": "/anton/static/js/488.9db3aaa7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.42164467.css",
-    "static/js/main.9afe789e.js"
+    "static/css/main.1e898854.css",
+    "static/js/main.12848cbe.js"
   ]
 }
