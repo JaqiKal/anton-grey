@@ -1,11 +1,13 @@
 import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
 
   return (
-    <div className="text-center text-xl text-blue-500">
-      Welcome to My Portfolio
-    </div>
+      <div>
+        <Navbar />
+        <h1 className="text-center mt-8 text-purple-700">Hello World</h1>
+      </div>
   );
 }
 export default App;

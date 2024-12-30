@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-[#f6f1eb];
+}
+
 /* Custom styles */
 body {
   margin: 0;
@@ -13,4 +17,8 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+nav {
+  background-color: #f6f1eb; /* Your desired hex color */
 }
