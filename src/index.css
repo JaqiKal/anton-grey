@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#f6f1eb];
+  @apply bg-[#94a3b8];
 }
 
 /* Custom styles */
@@ -20,5 +20,5 @@ code {
 }
 
 nav {
-  background-color: #f6f1eb; /* Your desired hex color */
+  background-color: transparent; /* Your desired hex color */
 }

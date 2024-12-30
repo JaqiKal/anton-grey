@@ -1,13 +1,16 @@
 import './App.css';
 import Navbar from './components/Navbar';
+import { Home } from './components/Home';
 
 function App() {
 
   return (
+    <>
       <div>
         <Navbar />
-        <h1 className="text-center mt-8 text-purple-700">Hello World</h1>
+        <Home />
       </div>
+    </>
   );
 }
 export default App;

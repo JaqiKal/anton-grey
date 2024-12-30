@@ -3,7 +3,7 @@ import logo from "../assets/images/logo.webp"; // Import the logo image
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center px-8 text-2xl text-amber-900">
+    <nav className="flex justify-between items-center px-8 text-2xl text-slate-900">
       {/* Logo as a link to Home */}
       <a
         href="/"
@@ -18,10 +18,22 @@ export default function Navbar() {
       </a>
       <div>
         <a
-          href="#gallery"
+          href="#animation"
           className="mr-4"
         >
-          Gallery
+          Animation
+        </a>
+        <a
+          href="#illustration"
+          className="mr-4"
+        >
+          Illustration
+        </a>
+        <a
+          href="#photography"
+          className="mr-4"
+        >
+          Photography
         </a>
         <a href="#about">About</a>
       </div>
