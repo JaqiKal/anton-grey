@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/anton/static/css/main.ec198d6a.css",
+    "main.js": "/anton/static/js/main.4a116b77.js",
+    "static/js/488.9db3aaa7.chunk.js": "/anton/static/js/488.9db3aaa7.chunk.js",
+    "index.html": "/anton/index.html",
+    "main.ec198d6a.css.map": "/anton/static/css/main.ec198d6a.css.map",
+    "main.4a116b77.js.map": "/anton/static/js/main.4a116b77.js.map",
+    "488.9db3aaa7.chunk.js.map": "/anton/static/js/488.9db3aaa7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec198d6a.css",
+    "static/js/main.4a116b77.js"
+  ]
+}
