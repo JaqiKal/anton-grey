@@ -1,81 +1,82 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-export const Home = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentVideo, setCurrentVideo] = useState(""); // Track the currently selected video
+const Home = () => {
+  const videoRef = useRef(null);
+  const navigate = useNavigate();
 
-  const videoReels = [
-    {
-      id: 1,
-      thumbnail: "https://res.cloudinary.com/dsbcjtatz/image/upload/v1735598877/anton/thumbnail/goldenglobe-thumbnail_dquugu.webp", // Thumbnail URL
-      videoUrl: "https://res.cloudinary.com/dsbcjtatz/video/upload/v1735554889/anton/video/3129902-uhd_3840_2160_25fps-guldglob_fte6hg.mp4", // Video URL
-    },
-    {
-      id: 2,
-      thumbnail: "https://res.cloudinary.com/dsbcjtatz/image/upload/v1735599514/anton/thumbnail/rockring_qvcos3.webp", // Replace with the second thumbnail URL
-      videoUrl: "https://res.cloudinary.com/dsbcjtatz/video/upload/v1735550402/anton/video/12832973_1440_1080_60fps-rockring_krckmb.mp4", // Replace with the second video URL
-    },
-  ];
+  useEffect(() => {
+    const videoElement = videoRef.current;
+
+    // Play video when component mounts
+    if (videoElement && videoElement.readyState >= 2) {
+      videoElement.play().catch((err) => {
+        console.error("Error playing video:", err);
+      });
+    }
+
+    return () => {
+      // Pause video when component unmounts
+      if (videoElement) {
+        videoElement.pause();
+      }
+    };
+  }, []);
+
+  const handleMouseEnter = () => {
+    const videoElement = videoRef.current;
+    if (videoElement && videoElement.readyState >= 2) {
+      videoElement.play().catch((err) => {
+        console.error("Error playing video on hover:", err);
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      videoElement.pause();
+    }
+  };
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-r from-slate-400 via-slate-600 to-slate-700 text-white">
-      <h1 className="text-5xl font-bold mb-6">Welcome to My Portfolio</h1>
-      <p className="text-xl mb-8">Hover over the thumbnails to play the video reels.</p>
-
-      {/* Video Thumbnails */}
-      <div className="flex space-x-8">
-        {videoReels.map((reel) => (
-          <div
-            key={reel.id}
-            className="relative w-64 h-36 bg-gray-800 rounded-lg shadow-lg cursor-pointer overflow-hidden group"
-            onClick={() => {
-              setCurrentVideo(reel.videoUrl); // Set the current video
-              setIsModalOpen(true); // Open the modal
-            }}
-          >
-            <img
-              src={reel.thumbnail}
-              alt={`Video Reel ${reel.id}`}
-              className="absolute inset-0 w-full h-full object-cover group-hover:opacity-80"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="text-white text-xl font-bold">Play Video</span>
-            </div>
-          </div>
-        ))}
+    <div
+      className="relative h-screen bg-gradient-to-r from-slate-400 via-slate-600 to-slate-700 flex items-center justify-center"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Video */}
+      <div className="relative w-11/12 h-5/6 mx-auto shadow-lg rounded-lg overflow-hidden">
+        <video
+          ref={videoRef}
+          src="https://res.cloudinary.com/dsbcjtatz/video/upload/v1735550404/anton/video/7792629-hd_1080_2048_25fps-haaai_mgojpg.mp4"
+          muted
+          autoPlay
+          loop
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-          onClick={() => setIsModalOpen(false)} // Close modal on overlay click
-        >
-          <div
-            className="relative bg-white rounded-lg shadow-lg p-4 max-w-3xl mx-auto"
-            onClick={(e) => e.stopPropagation()} // Prevent modal close on content click
+      {/* Overlay Content */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+        <h1 className="text-5xl font-bold mb-6 drop-shadow-lg">Anton Skogsberg</h1>
+        <div className="flex justify-center space-x-4">
+          <button
+            onClick={() => navigate("/work")}
+            className="w-28 h-12 bg-blue-800 hover:bg-fuchsia-800 text-lg font-semibold rounded-md shadow-md flex items-center justify-center"
           >
-            <video
-              controls
-              autoPlay
-              className="w-full h-auto"
-            >
-              <source
-                src={currentVideo}
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-            {/* Close Button */}
-            <button
-              className="absolute top-2 right-2 bg-gray-200 text-gray-700 rounded-full px-3 py-1 hover:bg-gray-300"
-              onClick={() => setIsModalOpen(false)}
-            >
-              X
-            </button>
-          </div>
+            Work
+          </button>
+          <button
+            onClick={() => navigate("/contact")}
+            className="w-28 h-12 bg-teal-500 hover:bg-amber-700 text-lg font-semibold rounded-md shadow-md flex items-center justify-center"
+          >
+            Say Hello!
+          </button>
         </div>
-      )}
+      </div>
     </div>
   );
 };
+
+export default Home;
