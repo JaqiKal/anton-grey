@@ -1,36 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.webp";
 
 const Navbar = () => {
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down, hide navbar
-        setShowNavbar(false);
-      } else {
-        // Scrolling up, show navbar
-        setShowNavbar(true);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full  z-50 flex justify-between items-center px-8 py-4 transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
-      {/* Logo as a link to Home */}
+    <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-slate-400 via-slate-600 to-slate-700 z-50 flex items-center justify-between px-8 py-4 shadow-lg">
+      {/* Logo */}
       <Link
         to="/"
         className="flex items-center"
@@ -38,23 +19,61 @@ const Navbar = () => {
         <img
           src={logo}
           alt="Logo"
-          className="h-28 w-auto"
+          className="h-12 w-auto"
         />
       </Link>
-      <div className="flex space-x-6">
-        <Link
-          to="/work"
-          className="hover:text-fuchsia-800 text-2xl font-semibold text-white mr-8"
+
+      {/* Hamburger Menu */}
+      <div className="relative md:hidden">
+        <button
+          onClick={toggleMenu}
+          className="text-white text-3xl focus:outline-none"
         >
-          Work
-        </Link>
-        <Link
-          to="/about"
-          className="hover:text-amber-700 text-2xl font-semibold text-white mr-8"
-        >
-          About
-        </Link>
+          &#9776;
+        </button>
+        <div className={`absolute right-0 top-full mt-2 bg-slate-600 rounded-md shadow-lg w-40 transition-all duration-300 ${isMenuOpen ? "block" : "hidden"}`}>
+          <ul className="flex flex-col text-white">
+            <li className="hover:bg-slate-500">
+              <Link
+                to="/work"
+                className="block px-4 py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Work
+              </Link>
+            </li>
+            <li className="hover:bg-slate-500">
+              <Link
+                to="/about"
+                className="block px-4 py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
+
+      {/* Desktop Links */}
+      <ul className="hidden md:flex space-x-8 text-white font-semibold text-lg">
+        <li>
+          <Link
+            to="/work"
+            className="hover:text-slate-300"
+          >
+            Work
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/about"
+            className="hover:text-slate-300"
+          >
+            About
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 };
