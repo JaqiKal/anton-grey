@@ -68,7 +68,7 @@ const Home = () => {
             Work
           </button>
           <button
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/about")}
             className="w-28 h-12 bg-teal-500 hover:bg-amber-700 text-lg font-semibold rounded-md shadow-md flex items-center justify-center"
           >
             Say Hello!

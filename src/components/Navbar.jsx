@@ -49,7 +49,7 @@ const Navbar = () => {
           Work
         </Link>
         <Link
-          to="/contact"
+          to="/about"
           className="hover:text-amber-700 text-2xl font-semibold text-white mr-8"
         >
           About
