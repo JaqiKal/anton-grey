@@ -1,9 +1,30 @@
 import React from "react";
+import antonTini from "../assets/images/anton-tini.webp";
+import emailjs from "emailjs-com";
 
 const AboutContact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Form submitted!");
+
+    emailjs
+      .sendForm(
+        "service_3g3ky6m", // Your EmailJS Service ID
+        "template_6ggjajn", // Your EmailJS Template ID
+        e.target, // The form element
+        "NZDAkGn4zgTuc0KAl" // Your EmailJS User ID (Public Key)
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.error("Error sending email:", error.text);
+          alert("Failed to send message. Please try again later.");
+        }
+      );
+
+    e.target.reset(); // Clear the form fields after submission
   };
 
   return (
@@ -13,13 +34,25 @@ const AboutContact = () => {
         {/* Image Placeholder */}
         <div className="relative mb-6 lg:mb-0">
           <img
-            src="https://via.placeholder.com/200"
-            alt="Placeholder"
+            src={antonTini}
+            alt="Anton"
             className="float-left mr-4 mb-4 w-48 h-48 object-cover shadow-lg rounded-lg"
           />
           <p className="text-justify text-gray-200 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at tellus velit. Etiam auctor, augue vitae volutpat fringilla, enim turpis fermentum nunc, quis cursus odio libero nec urna. Sed consectetur ultricies ex non sodales.
+            Walk on a keyboard catch small lizards, bring them into house, then unable to find them on carpet roll on the floor purring your whiskers off. Cat ipsum dolor sit amet, catto munch salmono kick up litter but cat cat moo moo lick ears lick
+            paws.
           </p>
+          <p className="text-justify text-gray-200 leading-relaxed mt-10">
+            Cat is life munch, munch, chomp, chomp. Drool. When owners are asleep, cry for no apparent reason sun bathe. Furball roll roll roll. Eat a rug and furry furry hairs everywhere. Kitty time i hate cucumber pls dont throw it at me.
+          </p>
+          {/* Download my CV */}
+          <a
+            href="/path-to-your-pdf-file.pdf"
+            download
+            className="mt-4 inline-block py-2 px-4 bg-blue-600 text-white rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Download my CV
+          </a>
         </div>
       </div>
 
@@ -33,14 +66,15 @@ const AboutContact = () => {
           {/* Name Field */}
           <div>
             <label
-              htmlFor="name"
+              htmlFor="from_name"
               className="block text-sm font-medium text-gray-700"
             >
               Name
             </label>
             <input
               type="text"
-              id="name"
+              id="from_name"
+              name="from_name" // Match EmailJS template variable
               required
               className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="Your Name"
@@ -50,14 +84,15 @@ const AboutContact = () => {
           {/* Email Field */}
           <div>
             <label
-              htmlFor="email"
+              htmlFor="from_email"
               className="block text-sm font-medium text-gray-700"
             >
               Email
             </label>
             <input
               type="email"
-              id="email"
+              id="from_email"
+              name="from_email" // Match EmailJS template variable
               required
               className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="Your Email"
@@ -74,6 +109,7 @@ const AboutContact = () => {
             </label>
             <textarea
               id="message"
+              name="message" // Match EmailJS template variable
               rows="4"
               required
               className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
