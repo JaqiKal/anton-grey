@@ -7,7 +7,7 @@ function Navbar() {
 
   return (
     <nav className="bg-gradient-to-r from-slate-400 via-slate-600 to-slate-700 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 lg:pt-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-48 ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -16,14 +16,14 @@ function Navbar() {
               <img
                 src={logo}
                 alt="Logo"
-                className="h-28  w-auto transition-transform duration-300 hover:scale-125"
+                className="h-28  w-auto transition-transform duration-300 hover:scale-x-125"
               />
             </Link>
           </div>
 
           {/* Links for Large Screens */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
-            <ul className="flex space-x-20 font-semibold text-xl">
+            <ul className="flex space-x-20 font-semibold lg:text-2xl">
               <li>
                 <Link
                   to="/work"
@@ -71,7 +71,7 @@ function Navbar() {
 
       {/* Links for Small Screens */}
       <div className={`${isOpen ? "block" : "hidden"} lg:hidden`}>
-        <ul className="flex flex-col items-center justify-center px-2 pt-2 pb-3 space-y-3 sm:px-3 bg-slate-400">
+        <ul className="flex flex-col items-center justify-center px-2 pt-2 pb-3 space-y-3 sm:px-3 bg-fuchsia-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
           <li>
             <Link
               to="/work"
