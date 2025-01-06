@@ -70,7 +70,8 @@ function Navbar() {
       </div>
 
       {/* Links for Small Screens */}
-      <div className={`${isOpen ? "block" : "hidden"} lg:hidden`}>
+
+      <div className={`overflow-hidden lg:hidden transition-all duration-700  ease-in-out ${isOpen ? "max-h-screen" : "max-h-0"}`}>
         <ul className="flex flex-col items-center justify-center px-2 pt-2 pb-3 space-y-3 sm:px-3 bg-fuchsia-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
           <li>
             <Link
