@@ -57,7 +57,7 @@ const AboutContact = () => {
       </div>
 
       {/* Right Side: Contact Form */}
-      <div className="lg:w-1/2 bg-white shadow-lg rounded-lg p-8 self-start">
+      <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-8 self-start">
         <h2 className="text-2xl font-semibold mb-4 text-gray-700">Contact Me</h2>
         <form
           className="space-y-4"
