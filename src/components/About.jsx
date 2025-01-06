@@ -78,6 +78,7 @@ const AboutContact = () => {
               required
               className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="Your Name"
+              maxLength={80} // Defensive mechanism: limit input length
             />
           </div>
 
@@ -96,7 +97,10 @@ const AboutContact = () => {
               required
               className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="Your Email"
+              maxLength={40} // Defensive mechanism: limit input length
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" // Defensive mechanism: validate email
             />
+            <p className="text-sm text-gray-500">Please enter a valid email address.</p>
           </div>
 
           {/* Message Field */}
@@ -114,6 +118,7 @@ const AboutContact = () => {
               required
               className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="Your Message"
+              maxLength={500} // Defensive mechanism: limit message length
             ></textarea>
           </div>
 
