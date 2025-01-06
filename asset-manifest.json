@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/anton/static/css/main.0ba97633.css",
-    "main.js": "/anton/static/js/main.3a4ba93a.js",
+    "main.css": "/anton/static/css/main.f8835e0d.css",
+    "main.js": "/anton/static/js/main.9e8487d7.js",
     "static/js/488.9db3aaa7.chunk.js": "/anton/static/js/488.9db3aaa7.chunk.js",
     "static/media/logo.webp": "/anton/static/media/logo.cb2b22bc3d711039ff03.webp",
     "static/media/anton-tini.webp": "/anton/static/media/anton-tini.7dcf0c9fb668950b0961.webp",
     "index.html": "/anton/index.html",
-    "main.0ba97633.css.map": "/anton/static/css/main.0ba97633.css.map",
-    "main.3a4ba93a.js.map": "/anton/static/js/main.3a4ba93a.js.map",
+    "main.f8835e0d.css.map": "/anton/static/css/main.f8835e0d.css.map",
+    "main.9e8487d7.js.map": "/anton/static/js/main.9e8487d7.js.map",
     "488.9db3aaa7.chunk.js.map": "/anton/static/js/488.9db3aaa7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ba97633.css",
-    "static/js/main.3a4ba93a.js"
+    "static/css/main.f8835e0d.css",
+    "static/js/main.9e8487d7.js"
   ]
 }
