@@ -49,7 +49,7 @@ const Home = () => {
       <div className="relative w-11/12 h-5/6 mx-auto shadow-lg rounded-lg overflow-hidden">
         <video
           ref={videoRef}
-          src="https://res.cloudinary.com/dsbcjtatz/video/upload/v1735550404/anton/video/7792629-hd_1080_2048_25fps-haaai_mgojpg.mp4"
+          src="https://res.cloudinary.com/dsbcjtatz/video/upload/v1735807083/anton/3D/antonSkogsberg_3DShowreel_v006_lcpenm.mp4"
           muted
           autoPlay
           loop
