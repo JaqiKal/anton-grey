@@ -1,6 +1,8 @@
 import React from "react";
 import antonTini from "../assets/images/anton-tini.webp";
+import placeholder from "../assets/images/placeholder.png";
 import emailjs from "emailjs-com";
+import antonCv from "../assets/doc/cv-anton-skogsberg.pdf";
 
 const AboutContact = () => {
   const handleSubmit = (e) => {
@@ -28,37 +30,90 @@ const AboutContact = () => {
   };
 
   return (
-    <div className="flex flex-wrap lg:flex-nowrap min-h-screen bg-gradient-to-r from-slate-400 via-slate-600 to-slate-700 p-8">
+    <div className="flex flex-wrap lg:flex-nowrap min-h-screen bg-gradient-to-r from-slate-400 via-slate-600 to-slate-700 p-6 items-start">
       {/* Left Side: Image and Text */}
       <div className="lg:w-1/2 flex flex-col justify-start pr-8">
-        {/* Image Placeholder */}
-        <div className="relative mb-6 lg:mb-0">
-          <img
-            src={antonTini}
-            alt="Anton"
-            className="float-left mr-4 mb-4 w-48 h-48 object-cover shadow-lg rounded-lg"
-          />
+        {/* Images Section */}
+        <div className="flex items-center px-4 lg:px-8">
+          {/* Static Image */}
+          <div className="relative group w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
+            <img
+              alt="Anton"
+              src={antonTini}
+              className="w-full h-full object-cover shadow-lg rounded-lg"
+            />
+            {/* Hover Text */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="text-white text-sm md:text-lg">To be replaced</p>
+            </div>
+          </div>
+
+          {/* Animated Placeholder Image */}
+          <div className="relative group w-24 h-24 flex-shrink-0 ml-14 lg:ml-40">
+            <img
+              src={placeholder}
+              alt="Placeholder for animation"
+              className="w-full h-full object-cover shadow-lg rounded-lg animate-pulse"
+            />
+            {/* Hover Text */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="text-white text-sm md:text-lg">To be replaced</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Description */}
+        <div className="px-4 lg:px-8 mt-6">
           <p className="text-justify text-gray-200 leading-relaxed">
-            Walk on a keyboard catch small lizards, bring them into house, then unable to find them on carpet roll on the floor purring your whiskers off. Cat ipsum dolor sit amet, catto munch salmono kick up litter but cat cat moo moo lick ears lick
-            paws.
+            Hi there! My name is Anton Skogsberg, and I’m an aspiring character animator, soon to graduate from{" "}
+            <a
+              href="https://animationworkshop.via.dk/programmes-and-courses/bachelor-programmes/character-animation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-600 transition-transform duration-200"
+            >
+              The Animation Workshop
+            </a>{" "}
+            in Denmark-one of Europe’s top schools for animation and visual arts. I love creating characters that feel alive, tell meaningful stories through movement, and leave a lasting impression.
           </p>
-          <p className="text-justify text-gray-200 leading-relaxed mt-10">
-            Cat is life munch, munch, chomp, chomp. Drool. When owners are asleep, cry for no apparent reason sun bathe. Furball roll roll roll. Eat a rug and furry furry hairs everywhere. Kitty time i hate cucumber pls dont throw it at me.
+
+          <p className="text-justify text-gray-200 leading-relaxed mt-6">
+            Over the course of my studies, I’ve specialized in
+            <span className="font-semibold italic bg-pink-500">[Examples: "3D character animation," "hand-drawn animation," or "motion capture."]</span>, while working on collaborative projects that have sharpened my skills in storytelling, teamwork,
+            and using industry-standard tools such as
+            <span className="font-semibold italic bg-pink-500">[Examples: Maya, Blender, Toon Boom, Unreal Engine, After Effects.]</span>. I’m always excited to explore new approaches to animation and push creative boundaries to bring engaging
+            characters to life.
           </p>
-          {/* Download my CV */}
+          <p className="text-justify text-gray-200 leading-relaxed mt-6">If you’d like to see more of my work or collaborate on a project, feel free to check out my portfolio and get in touch. I’d love to hear from you!</p>
+
+          {/* Download CV */}
           <a
-            href="/path-to-your-pdf-file.pdf"
+            href={antonCv}
             download
-            className="mt-4 inline-block py-2 px-4 bg-blue-600 text-white rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="mt-8 mb-10 inline-flex items-center py-2 px-4 bg-blue-600 text-white rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300"
           >
-            Download my CV
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3"
+              />
+            </svg>
+            Download My CV
           </a>
         </div>
       </div>
 
       {/* Right Side: Contact Form */}
-      <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-8 self-start">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-700">Contact Me</h2>
+      <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-6 lg:p-8 md:mt-24 lg:mt-24 mx-auto max-w-lg">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-700 text-center lg:text-left">Contact Me</h2>
         <form
           className="space-y-4"
           onSubmit={handleSubmit}
@@ -74,14 +129,13 @@ const AboutContact = () => {
             <input
               type="text"
               id="from_name"
-              name="from_name" // Match EmailJS template variable
+              name="from_name"
               required
               className="mt-1 block w-full rounded-xl bg-gray-200 p-4 outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition duration-300"
               placeholder="Your Name"
-              maxLength={80} // Defensive mechanism: validate mail
-              aria-describedby="namel-description" // De
+              maxLength={80}
             />
-            <p className="text-sm ml-2 text-gray-500">Please enter you name.</p>
+            <p className="text-sm ml-2 text-gray-500">Please enter your name.</p>
           </div>
 
           {/* Email Field */}
@@ -95,13 +149,12 @@ const AboutContact = () => {
             <input
               type="email"
               id="from_email"
-              name="from_email" // Match EmailJS template variable
+              name="from_email"
               required
               className="mt-1 block w-full rounded-xl bg-gray-200 p-4 outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition duration-300"
               placeholder="Your Email"
-              maxLength={40} // Defensive mechanism: limit input length
+              maxLength={40}
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-              aria-describedby="email-description" // Defensive mechanism: validate mail
             />
             <p className="text-sm ml-2 text-gray-500">Please enter a valid email address.</p>
           </div>
@@ -116,20 +169,14 @@ const AboutContact = () => {
             </label>
             <textarea
               id="message"
-              name="message" // Match EmailJS template variable
+              name="message"
               rows="4"
               required
               className="mt-1 block w-full rounded-xl bg-gray-200 p-4 outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition duration-300"
-              aria-describedby="message-description"
               placeholder="Your Message"
-              maxLength={500} // Defensive mechanism: limit message length
+              maxLength={500}
             ></textarea>
-            <p
-              id="message-description"
-              className="text-sm ml-2 text-gray-500"
-            >
-              Please limit your message to 500 characters.
-            </p>
+            <p className="text-sm ml-2 text-gray-500">Please limit your message to 500 characters.</p>
           </div>
 
           {/* Submit Button */}
