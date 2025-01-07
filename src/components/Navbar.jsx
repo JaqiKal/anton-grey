@@ -6,7 +6,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-slate-400 via-slate-600 to-slate-700 text-white">
+    <nav className="bg-gradient-to-r   from-gray-200 via-slate-400 to-gray-500  text-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-48 ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}

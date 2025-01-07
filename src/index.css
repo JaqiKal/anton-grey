@@ -3,10 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-[#94a3b8];
-}
-
 /* Custom styles */
 body {
   margin: 0;

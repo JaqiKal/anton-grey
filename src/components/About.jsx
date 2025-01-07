@@ -30,7 +30,7 @@ const AboutContact = () => {
   };
 
   return (
-    <div className="flex flex-wrap lg:flex-nowrap min-h-screen bg-gradient-to-r from-slate-400 via-slate-600 to-slate-700 p-6 items-start">
+    <div className="flex flex-wrap lg:flex-nowrap min-h-screen bg-gradient-to-r from-gray-200 via-slate-400 to-gray-500 p-6 items-start">
       {/* Left Side: Image and Text */}
       <div className="lg:w-1/2 flex flex-col justify-start pr-8">
         {/* Images Section */}
@@ -64,27 +64,27 @@ const AboutContact = () => {
 
         {/* Description */}
         <div className="px-4 lg:px-8 mt-6">
-          <p className="text-justify text-gray-200 leading-relaxed">
+          <p className="text-justify text-slate-750 leading-relaxed">
             Hi there! My name is Anton Skogsberg, and I’m an aspiring character animator, soon to graduate from{" "}
             <a
               href="https://animationworkshop.via.dk/programmes-and-courses/bachelor-programmes/character-animation"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-600 transition-transform duration-200"
+              className=" hover:text-blue-500 transition-transform duration-200"
             >
               The Animation Workshop
             </a>{" "}
             in Denmark-one of Europe’s top schools for animation and visual arts. I love creating characters that feel alive, tell meaningful stories through movement, and leave a lasting impression.
           </p>
 
-          <p className="text-justify text-gray-200 leading-relaxed mt-6">
+          <p className="text-justify text-slate-750 leading-relaxed mt-6">
             Over the course of my studies, I’ve specialized in
             <span className="font-semibold italic bg-pink-500">[Examples: "3D character animation," "hand-drawn animation," or "motion capture."]</span>, while working on collaborative projects that have sharpened my skills in storytelling, teamwork,
             and using industry-standard tools such as
             <span className="font-semibold italic bg-pink-500">[Examples: Maya, Blender, Toon Boom, Unreal Engine, After Effects.]</span>. I’m always excited to explore new approaches to animation and push creative boundaries to bring engaging
             characters to life.
           </p>
-          <p className="text-justify text-gray-200 leading-relaxed mt-6">If you’d like to see more of my work or collaborate on a project, feel free to check out my portfolio and get in touch. I’d love to hear from you!</p>
+          <p className="text-justify text-slate-750 leading-relaxed mt-6">If you’d like to see more of my work or collaborate on a project, feel free to check out my portfolio and get in touch. I’d love to hear from you!</p>
 
           {/* Download CV */}
           <a
@@ -113,7 +113,7 @@ const AboutContact = () => {
 
       {/* Right Side: Contact Form */}
       <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-6 lg:p-8 md:mt-24 lg:mt-24 mx-auto max-w-lg">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-700 text-center lg:text-left">Contact Me</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-slate-750 text-center lg:text-left">Contact Me</h2>
         <form
           className="space-y-4"
           onSubmit={handleSubmit}
@@ -122,7 +122,7 @@ const AboutContact = () => {
           <div>
             <label
               htmlFor="from_name"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-slate-750"
             >
               Name
             </label>
@@ -142,7 +142,7 @@ const AboutContact = () => {
           <div>
             <label
               htmlFor="from_email"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-slate-750"
             >
               Email
             </label>
@@ -163,7 +163,7 @@ const AboutContact = () => {
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-slate-750"
             >
               Message
             </label>
