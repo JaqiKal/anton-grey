@@ -9,7 +9,7 @@ const AboutContact = () => {
     emailjs
       .sendForm(
         "service_3g3ky6m", // Your EmailJS Service ID
-        "template_6ggjajn", // Your EmailJS Template ID
+        "template_5jqw39w", //TODO: ändra till Antons -  Your EmailJS Template ID
         e.target, // The form element
         "NZDAkGn4zgTuc0KAl" // Your EmailJS User ID (Public Key)
       )
@@ -76,10 +76,12 @@ const AboutContact = () => {
               id="from_name"
               name="from_name" // Match EmailJS template variable
               required
-              className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full rounded-xl bg-gray-200 p-4 outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition duration-300"
               placeholder="Your Name"
-              maxLength={80} // Defensive mechanism: limit input length
+              maxLength={80} // Defensive mechanism: validate mail
+              aria-describedby="namel-description" // De
             />
+            <p className="text-sm ml-2 text-gray-500">Please enter you name.</p>
           </div>
 
           {/* Email Field */}
@@ -95,12 +97,13 @@ const AboutContact = () => {
               id="from_email"
               name="from_email" // Match EmailJS template variable
               required
-              className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full rounded-xl bg-gray-200 p-4 outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition duration-300"
               placeholder="Your Email"
               maxLength={40} // Defensive mechanism: limit input length
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" // Defensive mechanism: validate email
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              aria-describedby="email-description" // Defensive mechanism: validate mail
             />
-            <p className="text-sm text-gray-500">Please enter a valid email address.</p>
+            <p className="text-sm ml-2 text-gray-500">Please enter a valid email address.</p>
           </div>
 
           {/* Message Field */}
@@ -116,17 +119,24 @@ const AboutContact = () => {
               name="message" // Match EmailJS template variable
               rows="4"
               required
-              className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full rounded-xl bg-gray-200 p-4 outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition duration-300"
+              aria-describedby="message-description"
               placeholder="Your Message"
               maxLength={500} // Defensive mechanism: limit message length
             ></textarea>
+            <p
+              id="message-description"
+              className="text-sm ml-2 text-gray-500"
+            >
+              Please limit your message to 500 characters.
+            </p>
           </div>
 
           {/* Submit Button */}
           <div>
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 transition duration-300"
             >
               Submit
             </button>
