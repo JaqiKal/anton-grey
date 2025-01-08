@@ -1,12 +1,37 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/images/logo.webp";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+
+    const isLargeScreen = window.innerWidth >= 1280;
+
+    if (isLargeScreen) {
+      // No need to scroll on XL screens
+      navigate("/about");
+      return;
+    }
+
+    if (location.pathname === "/about") {
+      // Scroll to contact section if already on About page
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/about");
+      // Navigate to About page, then scroll
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      }, 200);
+    }
+  };
 
   return (
-    <nav className="bg-gradient-to-r   from-gray-200 via-slate-400 to-gray-500  text-slate-900">
+    <nav className="bg-gradient-to-r   from-gray-200 via-slate-400 to-gray-500  text-customPurple">
       <div className="container mx-auto px-4 sm:px-6 lg:px-48 ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -26,19 +51,37 @@ function Navbar() {
             <ul className="flex space-x-20 font-semibold lg:text-2xl">
               <li>
                 <Link
+                  to="/"
+                  className="hover:text-fuchsia-800  transition-transform duration-500 ease-in-out"
+                >
+                  <span className="inline-block hover:scale-110">Home</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/work"
                   className="hover:text-fuchsia-800  transition-transform duration-500 ease-in-out"
                 >
-                  <span className="inline-block hover:scale-125">Work</span>
+                  <span className="inline-block hover:scale-110">Work</span>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/about"
-                  className="hover:text-amber-700 transition-transform duration-500 ease-in-out"
+                  className="hover:text-fuchsia-800  transition-transform duration-500 ease-in-out"
                 >
-                  <span className="inline-block hover:scale-125">About</span>
+                  <span className="inline-block hover:scale-110">About</span>
                 </Link>
+              </li>
+
+              <li>
+                <a
+                  href="#contact"
+                  onClick={handleContactClick}
+                  className="hover:text-fuchsia-800"
+                >
+                  <span className="inline-block hover:scale-110">Contact</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -51,7 +94,7 @@ function Navbar() {
               aria-label="Toggle navigation"
             >
               <svg
-                className="h-8 w-8 text-white"
+                className="h-8 w-8 text-customPurpleHamburger hover:text-fuchsia-800 transition-transform duration-500 ease-in-out"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -75,19 +118,37 @@ function Navbar() {
         <ul className="flex flex-col items-center justify-center px-2 pt-2 pb-3 space-y-3 sm:px-3 bg-fuchsia-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
           <li>
             <Link
+              to="/"
+              className="block hover:text-fuchsia-800 px-4 py-3 rounded-md text-xl font-bold"
+            >
+              <span className="inline-block hover:scale-110">Home</span>
+            </Link>
+          </li>
+
+          <li>
+            <Link
               to="/work"
               className="block hover:text-fuchsia-800 px-4 py-3 rounded-md text-xl font-bold"
             >
-              Work
+              <span className="inline-block hover:scale-110">Work</span>
             </Link>
           </li>
           <li>
             <Link
               to="/about"
-              className="block hover:text-amber-700  px-4 py-3 rounded-md text-xl font-bold"
+              className="block hover:text-fuchsia-800 px-4 py-3 rounded-md text-xl font-bold"
             >
-              About
+              <span className="inline-block hover:scale-110">About</span>
             </Link>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              onClick={handleContactClick}
+              className="block hover:text-fuchsia-800 px-4 py-3 rounded-md text-xl font-bold"
+            >
+              <span className="inline-block hover:scale-110">Contact</span>
+            </a>
           </li>
         </ul>
       </div>

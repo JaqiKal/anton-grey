@@ -9,7 +9,11 @@ module.exports = {
         lg: '16px',
         xl: '24px',
       },
+      colors: {
+        customPurple: '#4d3f78',
+        customPurpleHamburger: '#2e2548',
     },
+  },
   },
   variants: {
     extend: {

@@ -106,7 +106,10 @@ const AboutContact = () => {
       </div>
 
       {/* Contact Form */}
-      <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-6 lg:p-8 md:mt-24 lg:mt-24 mx-auto max-w-lg">
+      <div
+        id="contact"
+        className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-6 lg:p-8 md:mt-24 lg:mt-24 mx-auto max-w-lg"
+      >
         <h2 className="text-2xl font-semibold mb-4 text-slate-750 text-center lg:text-left">Contact Me</h2>
         <form
           className="space-y-4"
