@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/logo.webp";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation(); // Get the current location
+
+  const isActive = (path) => location.pathname === path; // Check if the current path is active
 
   return (
     <nav className="bg-gradient-to-r   from-gray-200 via-slate-400 to-gray-500  text-customPurple">
@@ -27,7 +30,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/"
-                  className="hover:text-fuchsia-800  transition-transform duration-500 ease-in-out"
+                  className={`transition-transform duration-500 ease-in-out ${isActive("/") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
                 >
                   <span className="inline-block hover:scale-110">Home</span>
                 </Link>
@@ -35,7 +38,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/work"
-                  className="hover:text-fuchsia-800  transition-transform duration-500 ease-in-out"
+                  className={`transition-transform duration-500 ease-in-out ${isActive("/work") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
                 >
                   <span className="inline-block hover:scale-110">Work</span>
                 </Link>
@@ -43,7 +46,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/about"
-                  className="hover:text-fuchsia-800  transition-transform duration-500 ease-in-out"
+                  className={`transition-transform duration-500 ease-in-out ${isActive("/about") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
                 >
                   <span className="inline-block hover:scale-110">Say Hello!</span>
                 </Link>
@@ -84,7 +87,7 @@ function Navbar() {
           <li>
             <Link
               to="/"
-              className="block hover:text-fuchsia-800 px-4 py-3 rounded-md text-xl font-bold"
+              className={`block px-4 py-3 rounded-md text-xl font-bold ${isActive("/") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
             >
               <span className="inline-block hover:scale-110">Home</span>
             </Link>
@@ -93,7 +96,7 @@ function Navbar() {
           <li>
             <Link
               to="/work"
-              className="block hover:text-fuchsia-800 px-4 py-3 rounded-md text-xl font-bold"
+              className={`block px-4 py-3 rounded-md text-xl font-bold ${isActive("/work") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
             >
               <span className="inline-block hover:scale-110">Work</span>
             </Link>
@@ -101,7 +104,7 @@ function Navbar() {
           <li>
             <Link
               to="/about"
-              className="block hover:text-fuchsia-800 px-4 py-3 rounded-md text-xl font-bold"
+              className={`block px-4 py-3 rounded-md text-xl font-bold ${isActive("/about") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
             >
               <span className="inline-block hover:scale-110">Say Hello!</span>
             </Link>
