@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const videoRef = useRef(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const videoElement = videoRef.current;
@@ -41,7 +41,7 @@ const Home = () => {
 
   return (
     <div
-      className="relative h-screen bg-gradient-to-r from-gray-200 via-slate-400 to-gray-500 flex items-center justify-center"
+      className="relative h-screen bg-gradient-to-r from-gray-200 via-slate-400 to-gray-500  flex items-start justify-center pt-8"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -57,7 +57,7 @@ const Home = () => {
         />
       </div>
 
-      {/* Overlay Content */}
+      {/* Overlay Content 
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
         <h1 className="text-5xl font-bold mb-6 drop-shadow-lg">Anton Skogsberg</h1>
         <div className="flex justify-center space-x-4">
@@ -75,6 +75,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+      */}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import antonTini from "../assets/images/anton-tini.webp";
 import placeholder from "../assets/images/placeholder.png";
 import emailjs from "emailjs-com";
 import antonCv from "../assets/doc/cv-anton-skogsberg.pdf";
+import { Link } from "react-router-dom";
 
 const AboutContact = () => {
   const handleSubmit = (e) => {
@@ -30,30 +31,25 @@ const AboutContact = () => {
   };
 
   return (
-    <div className="flex flex-wrap lg:flex-nowrap min-h-screen bg-gradient-to-r from-gray-200 via-slate-400 to-gray-500 p-6 items-start">
-      {/* Left Side: Image and Text */}
+    <div className="bg-gradient-to-r from-gray-200 via-slate-400 to-gray-500 p-6 flex flex-wrap lg:flex-nowrap min-h-screen p-6 md:mt-10 lg:mt-10  2xl:mt-10 items-start">
+      {/* Image and Bio */}
       <div className="lg:w-1/2 flex flex-col justify-start pr-8">
         {/* Images Section */}
         <div className="flex items-center px-4 lg:px-8">
           {/* Static Image */}
-          <div className="relative group w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
+          <div className="relative rounded-lg  bg-gradient-to-r from-gray-400 via-blue-900 to-gray-400 group w-32 h-32 md:w-48 md:h-48 flex-shrink-0 drop-shadow-lg">
             <img
-              alt="Anton"
+              alt="Anton Skogsberg"
               src={antonTini}
               className="w-full h-full object-cover shadow-lg rounded-lg"
             />
-            {/* Hover Text */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white text-sm md:text-lg">To be replaced</p>
-            </div>
           </div>
-
-          {/* Animated Placeholder Image */}
-          <div className="relative group w-24 h-24 flex-shrink-0 ml-14 lg:ml-40">
+          {/* Animated Image */}
+          <div className="relative group w-24 h-24 flex-shrink-0 sm:ml-14 md:ml-80 lg:ml-72 2xl:ml-80 drop-shadow-lg">
             <img
               src={placeholder}
-              alt="Placeholder for animation"
-              className="w-full h-full object-cover shadow-lg rounded-lg animate-pulse"
+              alt="Animation"
+              className="w-full h-full object-cover shadow-lg rounded-full animate-pulse"
             />
             {/* Hover Text */}
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -63,28 +59,26 @@ const AboutContact = () => {
         </div>
 
         {/* Description */}
-        <div className="px-4 lg:px-8 mt-6">
+        <div className="px-4 lg:px-8 mt-8">
           <p className="text-justify text-slate-750 leading-relaxed">
-            Hi there! My name is Anton Skogsberg, and I’m an aspiring character animator, soon to graduate from{" "}
-            <a
-              href="https://animationworkshop.via.dk/programmes-and-courses/bachelor-programmes/character-animation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" hover:text-blue-500 transition-transform duration-200"
-            >
-              The Animation Workshop
-            </a>{" "}
-            in Denmark-one of Europe’s top schools for animation and visual arts. I love creating characters that feel alive, tell meaningful stories through movement, and leave a lasting impression.
+            I’m a character animator, soon to graduate from The Animation Workshop in Denmark. One of Europe’s top schools for animation and visual arts. I love creating characters that feel alive, tell meaningful stories through movement, and leave
+            a lasting impression.
           </p>
 
           <p className="text-justify text-slate-750 leading-relaxed mt-6">
-            Over the course of my studies, I’ve specialized in
-            <span className="font-semibold italic bg-pink-500">[Examples: "3D character animation," "hand-drawn animation," or "motion capture."]</span>, while working on collaborative projects that have sharpened my skills in storytelling, teamwork,
-            and using industry-standard tools such as
-            <span className="font-semibold italic bg-pink-500">[Examples: Maya, Blender, Toon Boom, Unreal Engine, After Effects.]</span>. I’m always excited to explore new approaches to animation and push creative boundaries to bring engaging
-            characters to life.
+            Over the course of my studies, I’ve specialized in 3D character animation, while working on collaborative projects that have sharpened my skills in storytelling, teamwork and using industry-standard tools such as Maya, Blender, Toon Boom,
+            Unreal Engine and After Effects. I’m always excited to explore new approaches to animation and push creative boundaries to bring engaging characters to life.
           </p>
-          <p className="text-justify text-slate-750 leading-relaxed mt-6">If you’d like to see more of my work or collaborate on a project, feel free to check out my portfolio and get in touch. I’d love to hear from you!</p>
+          <p className="text-justify text-slate-750 leading-relaxed mt-6">
+            If you’d like to see more of my work or collaborate on a project, feel free to check out{" "}
+            <Link
+              to="/work"
+              className="text-blue-900 hover:text-blue-700 transition-transform duration-300"
+            >
+              my portfolio
+            </Link>{" "}
+            and get in touch. I’d love to hear from you!
+          </p>
 
           {/* Download CV */}
           <a
@@ -111,7 +105,7 @@ const AboutContact = () => {
         </div>
       </div>
 
-      {/* Right Side: Contact Form */}
+      {/* Contact Form */}
       <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-6 lg:p-8 md:mt-24 lg:mt-24 mx-auto max-w-lg">
         <h2 className="text-2xl font-semibold mb-4 text-slate-750 text-center lg:text-left">Contact Me</h2>
         <form

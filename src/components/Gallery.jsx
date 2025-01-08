@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const artworks = [
   {
     id: 1,
-    title: "2D Animation Showreel by Anton Skogsberg",
+    title: "",
     description: "Showcasing dynamic hand-drawn animations and scenes created using industry-standard tools like TVPaint, Harmony, Photoshop, and After Effects.",
     imageUrl: "https://res.cloudinary.com/dsbcjtatz/image/upload/v1735807737/anton/2D/antonSkogsberg_2DThumbnail_v001_b4u6ha.png",
     videoUrl: "https://res.cloudinary.com/dsbcjtatz/video/upload/v1735807745/anton/2D/antonSkogsberg_2DShowreel_v003_kd941l.mp4",
@@ -12,7 +12,7 @@ const artworks = [
 
   {
     id: 2,
-    title: "3D Animation Showreel by Anton Skogsberg",
+    title: "",
     description: "A collection of 3D animations showcasing realistic physics, character rigging, and environmental design, created using Maya, Blender, After Effects, and Photoshop.",
     imageUrl: "https://res.cloudinary.com/dsbcjtatz/image/upload/v1735807074/anton/3D/antonSkogsberg_3DThumbnail_v001_efmy9d.png",
     videoUrl: "https://res.cloudinary.com/dsbcjtatz/video/upload/v1735807083/anton/3D/antonSkogsberg_3DShowreel_v006_lcpenm.mp4",
