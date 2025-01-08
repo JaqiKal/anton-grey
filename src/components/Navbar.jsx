@@ -1,34 +1,9 @@
 import React, { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.webp";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleContactClick = (e) => {
-    e.preventDefault();
-
-    const isLargeScreen = window.innerWidth >= 1280;
-
-    if (isLargeScreen) {
-      // No need to scroll on XL screens
-      navigate("/about");
-      return;
-    }
-
-    if (location.pathname === "/about") {
-      // Scroll to contact section if already on About page
-      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/about");
-      // Navigate to About page, then scroll
-      setTimeout(() => {
-        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-      }, 200);
-    }
-  };
 
   return (
     <nav className="bg-gradient-to-r   from-gray-200 via-slate-400 to-gray-500  text-customPurple">
@@ -70,18 +45,8 @@ function Navbar() {
                   to="/about"
                   className="hover:text-fuchsia-800  transition-transform duration-500 ease-in-out"
                 >
-                  <span className="inline-block hover:scale-110">About</span>
+                  <span className="inline-block hover:scale-110">Say Hello!</span>
                 </Link>
-              </li>
-
-              <li>
-                <a
-                  href="#contact"
-                  onClick={handleContactClick}
-                  className="hover:text-fuchsia-800"
-                >
-                  <span className="inline-block hover:scale-110">Contact</span>
-                </a>
               </li>
             </ul>
           </div>
@@ -138,17 +103,8 @@ function Navbar() {
               to="/about"
               className="block hover:text-fuchsia-800 px-4 py-3 rounded-md text-xl font-bold"
             >
-              <span className="inline-block hover:scale-110">About</span>
+              <span className="inline-block hover:scale-110">Say Hello!</span>
             </Link>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              onClick={handleContactClick}
-              className="block hover:text-fuchsia-800 px-4 py-3 rounded-md text-xl font-bold"
-            >
-              <span className="inline-block hover:scale-110">Contact</span>
-            </a>
           </li>
         </ul>
       </div>
