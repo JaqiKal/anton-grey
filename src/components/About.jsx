@@ -1,6 +1,5 @@
 import React from "react";
 import antonTini from "../assets/images/anton-tini.webp";
-import placeholder from "../assets/images/placeholder.png";
 import emailjs from "emailjs-com";
 import antonCv from "../assets/doc/cv-anton-skogsberg.pdf";
 import { Link } from "react-router-dom";
@@ -44,18 +43,6 @@ const AboutContact = () => {
               className="w-full h-full object-cover shadow-lg rounded-lg"
             />
           </div>
-          {/* Animated Image */}
-          <div className="relative group w-24 h-24 flex-shrink-0 sm:ml-14 md:ml-80 lg:ml-72 2xl:ml-80 drop-shadow-lg">
-            <img
-              src={placeholder}
-              alt="Animation"
-              className="w-full h-full object-cover shadow-lg rounded-full animate-pulse"
-            />
-            {/* Hover Text */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white text-sm md:text-lg">To be replaced</p>
-            </div>
-          </div>
         </div>
 
         {/* Description */}
@@ -64,7 +51,6 @@ const AboutContact = () => {
             I’m a character animator, soon to graduate from The Animation Workshop in Denmark. One of Europe’s top schools for animation and visual arts. I love creating characters that feel alive, tell meaningful stories through movement, and leave
             a lasting impression.
           </p>
-
           <p className="text-justify text-slate-750 leading-relaxed mt-6">
             Over the course of my studies, I’ve specialized in 3D character animation, while working on collaborative projects that have sharpened my skills in storytelling, teamwork and using industry-standard tools such as Maya, Blender, Toon Boom,
             Unreal Engine and After Effects. I’m always excited to explore new approaches to animation and push creative boundaries to bring engaging characters to life.
@@ -79,12 +65,48 @@ const AboutContact = () => {
             </Link>{" "}
             and get in touch. I’d love to hear from you!
           </p>
+          <p className="text-justify text-slate-750 leading-relaxed mt-6">
+            Follow me on social media for updates on my latest projects and animations.
+            {/* Social Media Links */}
+            <div className="flex space-x-4 mt-4">
+              <a
+                href="https://www.instagram.com/atoartworks/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-800 transition duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.281.058-2.418.27-3.29.542-.872.272-1.611.63-2.347 1.366-.736.736-1.094 1.475-1.366 2.347-.272.872-.484 2.009-.542 3.29-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.058 1.281.27 2.418.542 3.29.272.872.63 1.611 1.366 2.347.736.736 1.475 1.094 2.347 1.366.872.272 2.009.484 3.29.542 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.281-.058 2.418-.27 3.29-.542.872-.272 1.611-.63 2.347-1.366.736-.736 1.094-1.475 1.366-2.347.272-.872.484-2.009.542-3.29.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.281-.27-2.418-.542-3.29-.272-.872-.63-1.611-1.366-2.347-.736-.736-1.475-1.094-2.347-1.366-.872-.272-2.009-.484-3.29-.542-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.324c-2.293 0-4.162-1.869-4.162-4.162s1.869-4.162 4.162-4.162 4.162 1.869 4.162 4.162-1.869 4.162-4.162 4.162zm6.406-11.845c-.796 0-1.442.646-1.442 1.442s.646 1.442 1.442 1.442 1.442-.646 1.442-1.442-.646-1.442-1.442-1.442z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/anton-skogsberg-35701a24b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-800 transition duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.5c0-1.379-1.121-2.5-2.5-2.5s-2.5 1.121-2.5 2.5v5.5h-3v-10h3v1.268c.878-.878 2.121-1.268 3.5-1.268 2.481 0 4.5 2.019 4.5 4.5v5.5z" />
+                </svg>
+              </a>
+            </div>
+          </p>
 
           {/* Download CV */}
           <a
             href={antonCv}
             download
-            className="mt-8 mb-10 inline-flex items-center py-2 px-4 bg-blue-600 text-white rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300"
+            className="mt-8 mb-10 inline-flex items-center py-2 px-4 bg-blue-600 text-white shadow-md rounded-full  hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -180,7 +202,7 @@ const AboutContact = () => {
           <div>
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 transition duration-300"
+              className="w-full py-2 px-4 rounded-full bg-blue-600 text-white hover:bg-blue-700 outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 transition duration-300"
             >
               Submit
             </button>
