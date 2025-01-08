@@ -31,7 +31,7 @@ const AboutContact = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-gray-200 via-slate-400 to-gray-500 p-6 flex flex-wrap lg:flex-nowrap min-h-screen p-6 md:mt-10 lg:mt-10  2xl:mt-10 items-start">
+    <div className="bg-gradient-to-r from-gray-200 via-slate-400 to-gray-500 p-6 flex flex-wrap lg:flex-nowrap min-h-screen md:mt-10 lg:mt-10  2xl:mt-10 items-start">
       {/* Image and Bio */}
       <div className="lg:w-1/2 flex flex-col justify-start pr-8">
         {/* Images Section */}
@@ -110,7 +110,7 @@ const AboutContact = () => {
         id="contact"
         className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-6 lg:p-8 md:mt-24 lg:mt-24 mx-auto max-w-lg"
       >
-        <h2 className="text-2xl font-semibold mb-4 text-slate-750 text-center lg:text-left">Contact Me</h2>
+        <h2 className="text-2xl font-customFont mb-4 text-slate-750 text-center lg:text-left">Contact Me</h2>
         <form
           className="space-y-4"
           onSubmit={handleSubmit}

@@ -12,8 +12,11 @@ module.exports = {
       colors: {
         customPurple: '#4d3f78',
         customPurpleHamburger: '#2e2548',
+      },
+      fontFamily: {
+        customFont: ['Sniglet', 'Roboto', 'sans-serif'],
+      },
     },
-  },
   },
   variants: {
     extend: {

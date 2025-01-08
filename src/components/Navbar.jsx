@@ -23,18 +23,18 @@ function Navbar() {
               <img
                 src={logo}
                 alt="Logo"
-                className="h-28  w-auto transition-transform duration-300 hover:scale-x-125"
+                className="h-20 md:h-28 lg:h-28 xl:h-28 2xl:h-32 w-auto transition-transform duration-300 hover:scale-x-125"
               />
             </Link>
           </div>
 
           {/* Links for Large Screens */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
-            <ul className="flex space-x-20 font-semibold lg:text-2xl">
+            <ul className="flex space-x-20 font-customFont lg:text-2xl">
               <li>
                 <Link
                   to="/"
-                  className={`transition-transform duration-500 ease-in-out ${isActive("/") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
+                  className={`transition-transform duration-500 ease-in-out ${isActive("/") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
                 >
                   <span className="inline-block hover:scale-110">Home</span>
                 </Link>
@@ -42,7 +42,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/work"
-                  className={`transition-transform duration-500 ease-in-out ${isActive("/work") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
+                  className={`transition-transform duration-500 ease-in-out ${isActive("/work") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
                 >
                   <span className="inline-block hover:scale-110">Work</span>
                 </Link>
@@ -50,7 +50,7 @@ function Navbar() {
               <li>
                 <Link
                   to="/about"
-                  className={`transition-transform duration-500 ease-in-out ${isActive("/about") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
+                  className={`transition-transform duration-500 ease-in-out ${isActive("/about") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
                 >
                   <span className="inline-block hover:scale-110">Say Hello!</span>
                 </Link>
@@ -87,11 +87,11 @@ function Navbar() {
       {/* Links for Small Screens */}
 
       <div className={`overflow-hidden lg:hidden transition-all duration-700  ease-in-out ${isOpen ? "max-h-screen" : "max-h-0"}`}>
-        <ul className="flex flex-col items-center justify-center px-2 pt-2 pb-3 space-y-3 sm:px-3 bg-fuchsia-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
+        <ul className="py-3 font-customFont rounded-md text-xl flex flex-col items-end justify-center bg-fuchsia-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
           <li>
             <Link
               to="/"
-              className={`block px-4 py-3 rounded-md text-xl font-bold ${isActive("/") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
+              className={`block px-4 py-2  ${isActive("/") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
               onClick={handleLinkClick}
             >
               <span className="inline-block hover:scale-110">Home</span>
@@ -101,7 +101,7 @@ function Navbar() {
           <li>
             <Link
               to="/work"
-              className={`block px-4 py-3 rounded-md text-xl font-bold ${isActive("/work") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
+              className={`block px-4 py-2  ${isActive("/work") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
               onClick={handleLinkClick}
             >
               <span className="inline-block hover:scale-110">Work</span>
@@ -110,7 +110,7 @@ function Navbar() {
           <li>
             <Link
               to="/about"
-              className={`block px-4 py-3 rounded-md text-xl font-bold ${isActive("/about") ? "text-fuchsia-800 font-bold" : "hover:text-fuchsia-800"}`}
+              className={`block px-4 py-2  ${isActive("/about") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
               onClick={handleLinkClick}
             >
               <span className="inline-block hover:scale-110">Say Hello!</span>
