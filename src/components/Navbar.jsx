@@ -30,32 +30,34 @@ function Navbar() {
 
           {/* Links for Large Screens */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
-            <ul className="flex space-x-6 lg:px-6 font-customFont lg:text-xl">
-              <li>
-                <Link
-                  to="/"
-                  className={`transition-transform duration-500 ease-in-out ${isActive("/") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
-                >
-                  <span className="inline-block hover:scale-110">Home</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/work"
-                  className={`transition-transform duration-500 ease-in-out ${isActive("/work") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
-                >
-                  <span className="inline-block hover:scale-110">Work</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className={`transition-transform duration-500 ease-in-out ${isActive("/about") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
-                >
-                  <span className="inline-block hover:scale-110">Say Hello!</span>
-                </Link>
-              </li>
-            </ul>
+            <div className="h-full w-full bg-fuchsia-200 rounded-3xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 lg:px-3 lg:py-2 lg:mt-10 lg:mr-6">
+              <ul className="flex  space-x-10 lg:px-2  font-customFont lg:text-xl">
+                <li>
+                  <Link
+                    to="/"
+                    className={`transition-transform duration-500 ease-in-out ${isActive("/") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
+                  >
+                    <span className="inline-block hover:scale-110">Home</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/work"
+                    className={`transition-transform duration-500 ease-in-out ${isActive("/work") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
+                  >
+                    <span className="inline-block hover:scale-110">Work</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about"
+                    className={`transition-transform duration-500 ease-in-out ${isActive("/about") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
+                  >
+                    <span className="inline-block hover:scale-110">Say Hello!</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Hamburger Button */}
@@ -66,7 +68,7 @@ function Navbar() {
               aria-label="Toggle navigation"
             >
               <svg
-                className="h-8 w-8 text-customPurpleHamburger hover:text-fuchsia-800 transition-transform duration-500 ease-in-out"
+                className="h-8 w-8  text-customPurpleHamburger hover:text-fuchsia-800 transition-transform duration-500 ease-in-out"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -87,7 +89,7 @@ function Navbar() {
       {/* Links for Small Screens */}
 
       <div className={`overflow-hidden lg:hidden transition-all duration-700  ease-in-out ${isOpen ? "max-h-screen" : "max-h-0"}`}>
-        <ul className="font-customFont rounded-md text-md space-y-4 flex flex-col items-end justify-center bg-fuchsia-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
+        <ul className="font-customFont rounded-md text-lg space-y-4 flex flex-col items-end justify-center bg-fuchsia-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
           <li>
             <Link
               to="/"
