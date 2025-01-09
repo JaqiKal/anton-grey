@@ -5,6 +5,8 @@ import antonCv from "../assets/doc/cv-anton-skogsberg.pdf";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import SubmitButton from "./SubmitButton";
+import DownloadButton from "./DownloadButton";
 
 const AboutContact = () => {
   const handleSubmit = (e) => {
@@ -98,29 +100,13 @@ const AboutContact = () => {
           </div>
 
           {/* Download CV */}
-
-          <div className="flex justify-center space-x-4 mt-4">
-            <a
-              href={antonCv}
-              download
-              className="mt-8 mb-10 inline-flex items-center py-2 px-4 bg-blue-600 text-white shadow-md rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3"
-                />
-              </svg>
-              Download My CV
-            </a>
+          {/* Button design inspired and amended from: https://codepen.io/dhanishgajjar/pen/NgQqVj*/}
+          <div className="flex justify-center space-x-4 mt-8 mb-10 md:mb-2">
+            <DownloadButton
+              downloadLink={antonCv}
+              text="Download My CV"
+              icon={true}
+            />
           </div>
         </div>
       </div>
@@ -197,14 +183,8 @@ const AboutContact = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              className=" w-1/3 py-2 px-4 mt-4 rounded-full bg-blue-600 text-white hover:bg-blue-700 outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 transition duration-300"
-            >
-              Submit
-            </button>
-          </div>
+          {/* Button design inspired and amended from: https://codepen.io/astitva2009/pen/ExQeNxb*/}
+          <SubmitButton>Submit</SubmitButton>
         </form>
       </div>
     </div>
