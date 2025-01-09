@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <nav className="bg-gradient-to-r   from-gray-200 via-slate-400 to-gray-500  text-customPurple">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-48 ">
+      <div className="mx-auto px-2 md:px-6 lg:px-8 xl:px-10 2xl:px-16">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -30,7 +30,7 @@ function Navbar() {
 
           {/* Links for Large Screens */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
-            <ul className="flex space-x-20 font-customFont lg:text-2xl">
+            <ul className="flex space-x-6 lg:px-6 font-customFont lg:text-xl">
               <li>
                 <Link
                   to="/"
@@ -87,11 +87,11 @@ function Navbar() {
       {/* Links for Small Screens */}
 
       <div className={`overflow-hidden lg:hidden transition-all duration-700  ease-in-out ${isOpen ? "max-h-screen" : "max-h-0"}`}>
-        <ul className="py-3 font-customFont rounded-md text-xl flex flex-col items-end justify-center bg-fuchsia-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
+        <ul className="font-customFont rounded-md text-md space-y-4 flex flex-col items-end justify-center bg-fuchsia-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
           <li>
             <Link
               to="/"
-              className={`block px-4 py-2  ${isActive("/") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
+              className={`block px-4 pt-3 ${isActive("/") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
               onClick={handleLinkClick}
             >
               <span className="inline-block hover:scale-110">Home</span>
@@ -101,7 +101,7 @@ function Navbar() {
           <li>
             <Link
               to="/work"
-              className={`block px-4 py-2  ${isActive("/work") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
+              className={`block px-4  ${isActive("/work") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
               onClick={handleLinkClick}
             >
               <span className="inline-block hover:scale-110">Work</span>
@@ -110,7 +110,7 @@ function Navbar() {
           <li>
             <Link
               to="/about"
-              className={`block px-4 py-2  ${isActive("/about") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
+              className={`block px-4 pb-3  ${isActive("/about") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
               onClick={handleLinkClick}
             >
               <span className="inline-block hover:scale-110">Say Hello!</span>
