@@ -23,7 +23,7 @@ function Navbar() {
               <img
                 src={logo}
                 alt="Logo"
-                className="h-20 md:h-28 lg:h-28 xl:h-28 2xl:h-32 w-auto transition-transform duration-300 hover:scale-x-125"
+                className="h-20 md:h-28 lg:h-28 xl:h-28 2xl:h-32 w-auto transition-transform duration-300 hover:scale-x-110"
               />
             </Link>
           </div>
@@ -68,7 +68,7 @@ function Navbar() {
               aria-label="Toggle navigation"
             >
               <svg
-                className="h-8 w-8  text-customPurpleHamburger hover:text-fuchsia-800 transition-transform duration-500 ease-in-out"
+                className="h-8 w-8  text-customPurpleDark hover:text-fuchsia-800 transition-transform duration-500 ease-in-out"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
