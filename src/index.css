@@ -4,8 +4,6 @@
 @tailwind utilities;
 
 /* Custom styles */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;500;700&family=Sniglet:wght@400;800&display=swap");
-
 body {
   margin: 0;
   font-family: "Roboto", "Open Sans", Arial, sans-serif;
