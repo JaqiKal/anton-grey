@@ -197,10 +197,10 @@ const AboutContact = () => {
           </div>
 
           {/* Submit Button */}
-          <div>
+          <div className="flex justify-center">
             <button
               type="submit"
-              className="w-full py-2 px-4 rounded-full bg-blue-600 text-white hover:bg-blue-700 outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 transition duration-300"
+              className=" w-1/3 py-2 px-4 mt-4 rounded-full bg-blue-600 text-white hover:bg-blue-700 outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 transition duration-300"
             >
               Submit
             </button>
