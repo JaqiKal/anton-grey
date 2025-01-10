@@ -18,10 +18,11 @@
   position: relative;
   display: inline-block;
   padding: 0.5rem 1.5rem;
+  margin-top: 1rem;
   color: white;
   font-size: 1rem;
   font-weight: 600;
-  background: #4d3f78; /* Tailwind Blue-600 */
+  background: #2e1065; /* customPurpleDark */
   border: none;
   border-radius: 9999px; /* Fully rounded */
   overflow: hidden;
@@ -47,7 +48,7 @@
   background-size: 400%;
   z-index: -1;
   border-radius: 9999px;
-  animation: rainbow 3s linear infinite;
+  animation: rainbow 5s linear infinite;
 }
 
 /* Blur effect */
@@ -64,7 +65,7 @@
   filter: blur(10px);
   border-radius: 9999px;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.5s;
 }
 
 .button:hover::after {

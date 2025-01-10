@@ -3,8 +3,7 @@ import React, { useState } from "react";
 const artworks = [
   {
     id: 1,
-    title: "",
-    description: "Showcasing dynamic hand-drawn animations and scenes created using industry-standard tools like TVPaint, Harmony, Photoshop, and After Effects.",
+    description: "Showcasing dynamic hand-drawn 2D animations and scenes created using industry-standard tools like TVPaint, Harmony, Photoshop, and After Effects.",
     imageUrl: "https://res.cloudinary.com/dsbcjtatz/image/upload/v1735807737/anton/2D/antonSkogsberg_2DThumbnail_v001_b4u6ha.png",
     videoUrl: "https://res.cloudinary.com/dsbcjtatz/video/upload/v1735807745/anton/2D/antonSkogsberg_2DShowreel_v003_kd941l.mp4",
     category: "2D",
@@ -12,7 +11,6 @@ const artworks = [
 
   {
     id: 2,
-    title: "",
     description: "A collection of 3D animations showcasing realistic physics, character rigging, and environmental design, created using Maya, Blender, After Effects, and Photoshop.",
     imageUrl: "https://res.cloudinary.com/dsbcjtatz/image/upload/v1735807074/anton/3D/antonSkogsberg_3DThumbnail_v001_efmy9d.png",
     videoUrl: "https://res.cloudinary.com/dsbcjtatz/video/upload/v1735807083/anton/3D/antonSkogsberg_3DShowreel_v006_lcpenm.mp4",
@@ -50,10 +48,17 @@ const Gallery = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-8 hidden">Gallery</h1>
+      <h1 className="sr-only">Gallery</h1>
 
       {/* Dropdown Menu */}
       <div className="flex justify-end mb-8">
+        {/* Label for accessibility */}
+        <label
+          htmlFor="filterArtworks"
+          className="sr-only" // Hides the label visually but keeps it accessible for screen readers
+        >
+          Filter artworks by category
+        </label>
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
@@ -89,9 +94,9 @@ const Gallery = () => {
                 className="w-full h-48 object-cover"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                aria-label={`${art.title || "Artwork"}: ${art.description}`}
               />
               <div className="p-4">
-                <h2 className="text-2xl font-semibold mb-2">{art.title}</h2>
                 <p className="text-gray-700">{art.description}</p>
               </div>
             </div>
@@ -115,7 +120,7 @@ const Gallery = () => {
               autoPlay
               className="w-full mb-4"
             />
-            <h2 className="text-2xl font-bold mb-2">{selectedArtwork.title}</h2>
+
             <p className="text-gray-700">{selectedArtwork.description}</p>
           </div>
         </div>

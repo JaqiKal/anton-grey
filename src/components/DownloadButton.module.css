@@ -28,7 +28,7 @@
   z-index: -1;
   background: radial-gradient(90px circle at top center, rgba(180, 83, 9, 0.8) 30%, rgba(255, 255, 255, 0));
   transform: translatex(-140px);
-  animation: move 20s linear infinite;
+  animation: move 6s linear infinite;
 }
 
 /* Button hover effects */
@@ -39,7 +39,7 @@
 
 .button:hover .gradient {
   transform: translatex(140px);
-  transition: transform 0.3s ease-out;
+  transition: transform 0.1s ease-out;
 }
 
 /* Keyframes for the gradient animation */

@@ -8,7 +8,7 @@ const SubmitButton = ({ onClick, children }) => {
     <div className="flex justify-center">
       <button
         className={`${styles.button}`}
-        type="submit"
+        type="Send message"
         onClick={onClick}
       >
         <span>{children}</span>

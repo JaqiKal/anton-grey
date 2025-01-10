@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import SubmitButton from "./SubmitButton";
 import DownloadButton from "./DownloadButton";
+import styles from "./Form.module.css";
 
 const AboutContact = () => {
   const handleSubmit = (e) => {
@@ -34,7 +35,7 @@ const AboutContact = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-gray-200 via-slate-400 to-gray-500 p-6 flex flex-wrap lg:flex-nowrap min-h-screen md:mt-10 lg:mt-10 2xl:mt-10 items-start">
+    <div className="bg-gradient-to-r  from-gray-200 via-slate-400 to-gray-500 p-6 flex flex-wrap lg:flex-nowrap min-h-screen md:mt-10 lg:mt-20 2xl:mt-20 items-start">
       {/* Image and Bio */}
       <div className="lg:w-1/2 flex flex-col justify-start pr-8">
         {/* Images Section */}
@@ -79,6 +80,7 @@ const AboutContact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-customPurpleDark hover:text-fuchsia-800 transition duration-300 hover:scale-110"
+                aria-label="Anton's Instagram profile"
               >
                 <FontAwesomeIcon
                   icon={faInstagram}
@@ -90,6 +92,7 @@ const AboutContact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-customPurpleDark hover:text-fuchsia-800 transition duration-300 hover:scale-110"
+                aria-label="Anton's LinkedIn profile"
               >
                 <FontAwesomeIcon
                   icon={faLinkedinIn}
@@ -101,11 +104,12 @@ const AboutContact = () => {
 
           {/* Download CV */}
           {/* Button design inspired and amended from: https://codepen.io/dhanishgajjar/pen/NgQqVj*/}
-          <div className="flex justify-center space-x-4 mt-8 mb-10 md:mb-2">
+          <div className="flex justify-center space-x-4 mt-8 mb-10 md:mb-10">
             <DownloadButton
               downloadLink={antonCv}
               text="Download My CV"
               icon={true}
+              ariaLabel="Download Anton's CV as a PDF document"
             />
           </div>
         </div>
@@ -114,7 +118,7 @@ const AboutContact = () => {
       {/* Contact Form */}
       <div
         id="contact"
-        className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-6 lg:p-8 md:mt-24 lg:mt-24 mx-auto max-w-lg"
+        className={`w-full lg:w-1/2 rounded-lg p-6 lg:p-8 mx-auto max-w-lg ${styles.formContainer}`}
       >
         <h2 className="text-2xl font-customFont mb-4 text-slate-750 text-center lg:text-left">Contact Me</h2>
         <form
@@ -134,11 +138,11 @@ const AboutContact = () => {
               id="from_name"
               name="from_name"
               required
-              className="mt-1 block w-full rounded-xl bg-gray-200 p-4 outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition duration-300"
+              className={`mt-1 block w-full p-4 outline-none ${styles.textInput}`}
               placeholder="Your Name"
               maxLength={80}
             />
-            <p className="text-sm ml-2 text-gray-500">Please enter your name.</p>
+            <p className="text-sm ml-2 text-slate-900">Please enter your name.</p>
           </div>
 
           {/* Email Field */}
@@ -154,12 +158,12 @@ const AboutContact = () => {
               id="from_email"
               name="from_email"
               required
-              className="mt-1 block w-full rounded-xl bg-gray-200 p-4 outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition duration-300"
+              className={`mt-1 block w-full p-4 outline-none ${styles.textInput}`}
               placeholder="Your Email"
               maxLength={40}
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             />
-            <p className="text-sm ml-2 text-gray-500">Please enter a valid email address.</p>
+            <p className="text-sm ml-2 text-slate-900">Please enter a valid email address.</p>
           </div>
 
           {/* Message Field */}
@@ -175,16 +179,15 @@ const AboutContact = () => {
               name="message"
               rows="4"
               required
-              className="mt-1 block w-full rounded-xl bg-gray-200 p-4 outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition duration-300"
+              className={`mt-1 block w-full p-4 outline-none ${styles.textInput}`}
               placeholder="Your Message"
               maxLength={500}
             ></textarea>
-            <p className="text-sm ml-2 text-gray-500">Please limit your message to 500 characters.</p>
+            <p className="text-sm ml-2 text-slate-900">Please limit your message to 500 characters.</p>
           </div>
 
           {/* Submit Button */}
-          {/* Button design inspired and amended from: https://codepen.io/astitva2009/pen/ExQeNxb*/}
-          <SubmitButton>Submit</SubmitButton>
+          <SubmitButton>Send message</SubmitButton>
         </form>
       </div>
     </div>

@@ -47,6 +47,7 @@ const Home = () => {
     >
       {/* Video */}
       <div className="relative w-11/12 h-5/6 mx-auto shadow-lg rounded-lg overflow-hidden">
+        <h1 className="hidden">Home page</h1>
         <video
           ref={videoRef}
           src="https://res.cloudinary.com/dsbcjtatz/video/upload/v1735807083/anton/3D/antonSkogsberg_3DShowreel_v006_lcpenm.mp4"
@@ -54,6 +55,7 @@ const Home = () => {
           autoPlay
           loop
           className="w-full h-full object-cover"
+          aria-label="Anton Skogsberg 3D Showreel, a video showcasing 3D animations and visual effects, infinite loop"
         />
       </div>
 

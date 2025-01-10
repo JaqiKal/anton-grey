@@ -24,6 +24,7 @@ function Navbar() {
                 src={logo}
                 alt="Logo"
                 className="h-20 md:h-28 lg:h-28 xl:h-28 2xl:h-32 w-auto transition-transform duration-300 hover:scale-x-110"
+                aria-label="Go to homepage via logo"
               />
             </Link>
           </div>
@@ -36,6 +37,7 @@ function Navbar() {
                   <Link
                     to="/"
                     className={`transition-transform duration-500 ease-in-out ${isActive("/") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
+                    aria-label="Home navigation link"
                   >
                     <span className="inline-block hover:scale-110">Home</span>
                   </Link>
@@ -44,6 +46,7 @@ function Navbar() {
                   <Link
                     to="/work"
                     className={`transition-transform duration-500 ease-in-out ${isActive("/work") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
+                    aria-label="Work navigation link"
                   >
                     <span className="inline-block hover:scale-110">Work</span>
                   </Link>
@@ -52,6 +55,7 @@ function Navbar() {
                   <Link
                     to="/about"
                     className={`transition-transform duration-500 ease-in-out ${isActive("/about") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
+                    aria-label="About navigation link"
                   >
                     <span className="inline-block hover:scale-110">Say Hello!</span>
                   </Link>
@@ -95,6 +99,7 @@ function Navbar() {
               to="/"
               className={`block px-4 pt-3 ${isActive("/") ? "text-fuchsia-800" : "hover:text-fuchsia-800"}`}
               onClick={handleLinkClick}
+              aria-label="Home navigation link"
             >
               <span className="inline-block hover:scale-110">Home</span>
             </Link>

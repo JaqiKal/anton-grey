@@ -3,13 +3,14 @@
 import React from "react";
 import styles from "./DownloadButton.module.css";
 
-const DownloadButton = ({ downloadLink, text, icon }) => {
+const DownloadButton = ({ downloadLink, text, icon, ariaLabel }) => {
   return (
     <div className="flex justify-center space-x-4 mt-4">
       <a
         href={downloadLink}
         download
         className={`${styles.button} ${styles["download-button"]}`}
+        aria-label={ariaLabel} // For screen readers
       >
         <span className={styles.gradient}></span>
         <span className="flex items-center">
