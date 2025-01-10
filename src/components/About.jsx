@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import antonTini from "../assets/images/anton-tini.webp";
 import emailjs from "emailjs-com";
 import antonCv from "../assets/doc/cv-anton-skogsberg.pdf";
@@ -10,6 +10,12 @@ import DownloadButton from "./DownloadButton";
 import styles from "./Form.module.css";
 
 const AboutContact = () => {
+  const [message, setMessage] = useState("");
+  const maxMessageLength = 500;
+
+  const handleInputChange = (e) => {
+    setMessage(e.target.value);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -32,6 +38,7 @@ const AboutContact = () => {
       );
 
     e.target.reset(); // Clear the form fields after submission
+    setMessage(""); // Clear the message state
   };
 
   return (
@@ -181,9 +188,28 @@ const AboutContact = () => {
               required
               className={`mt-1 block w-full p-4 outline-none ${styles.textInput}`}
               placeholder="Your Message"
-              maxLength={500}
+              maxLength={maxMessageLength}
+              value={message}
+              onChange={handleInputChange}
             ></textarea>
-            <p className="text-sm ml-2 text-slate-900">Please limit your message to 500 characters.</p>
+
+            {/* Character counter */}
+            <div className="flex justify-between items-center">
+              {/* Static text */}
+              <p className="text-sm ml-2">Please limit your message to 500 characters.</p>
+              {/* Dynamic character count */}
+              <p
+                className={`text-sm ${
+                  message.length > maxMessageLength - 20
+                    ? "text-red-300" // Red color when 20 or fewer characters are remaining
+                    : message.length > maxMessageLength * 0.8
+                    ? "text-yellow-300" // Yellow color when over 80% of the limit
+                    : "text-slate-900" // Default color
+                }`}
+              >
+                {message.length}/{maxMessageLength}
+              </p>
+            </div>
           </div>
 
           {/* Submit Button */}
