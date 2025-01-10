@@ -47,11 +47,11 @@ const Gallery = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4">
       <h1 className="sr-only">Gallery</h1>
 
       {/* Dropdown Menu */}
-      <div className="flex justify-end mb-8">
+      <div className="flex justify-end mt-10 mb-8">
         {/* Label for accessibility */}
         <label
           htmlFor="filterArtworks"
@@ -73,12 +73,14 @@ const Gallery = () => {
 
       {/* Gallery Grid */}
       {filteredArtworks.length === 0 ? (
-        <div className="text-center text-fuchsia-100 mt-24">
-          <h2 className="text-2xl font-bold">🚧 Work in Progress! 🚧</h2>
-          <p className="mt-2">Great things are on the way! Grab a coffee and check back soon. ☕</p>
+        <div className="flex justify-center items-center  mt-32 md:mt-32 lg:mt-52 xl:mt-52 2xl:-scroll-mt-60">
+          <div className="text-center bg-fuchsia-200 p-10 rounded-3xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 text-customPurpleDark">
+            <h2 className="text-2xl font-bold ">🚧 Work in Progress!</h2>
+            <p className="mt-2">Great things are on the way! Grab a coffee and check back soon. ☕</p>
+          </div>
         </div>
       ) : (
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredArtworks.map((art) => (
             <div
               key={art.id}
