@@ -42,13 +42,13 @@ const AboutContact = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r  from-gray-200 via-slate-400 to-gray-500 p-6 flex flex-wrap lg:flex-nowrap min-h-screen md:mt-10 lg:mt-20 2xl:mt-20 items-start">
+    <div className=" p-6 flex flex-wrap lg:flex-nowrap min-h-screen md:mt-10 lg:mt-20 2xl:mt-20 items-start">
       {/* Image and Bio */}
       <div className="lg:w-1/2 flex flex-col justify-start pr-8">
         {/* Images Section */}
         <div className="flex items-center px-4 lg:px-8">
           {/* Static Image */}
-          <div className="relative rounded-lg bg-gradient-to-r from-gray-400 via-blue-900 to-gray-500 group w-32 h-32 md:w-48 md:h-48 flex-shrink-0 drop-shadow-lg">
+          <div className="relative rounded-lg bg-radial-gradient group  w-32 h-32 md:w-48 md:h-48 flex-shrink-0 drop-shadow-lg">
             <img
               alt="Anton Skogsberg"
               src={antonTini}

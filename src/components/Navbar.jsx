@@ -13,7 +13,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-gradient-to-r   from-gray-200 via-slate-400 to-gray-500  text-customPurple">
+    <nav className=" text-customPurple">
       <div className="mx-auto px-2 md:px-6 lg:px-8 xl:px-10 2xl:px-16">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -23,7 +23,7 @@ function Navbar() {
               <img
                 src={logo}
                 alt="Logo"
-                className="h-20 md:h-28 lg:h-28 xl:h-28 2xl:h-32 w-auto transition-transform duration-300 hover:scale-x-110"
+                className="h-20 md:h-28 lg:h-28 xl:h-28 2xl:h-32 w-auto transition-transform duration-300 hover:scale-110"
                 aria-label="Go to homepage via logo"
               />
             </Link>

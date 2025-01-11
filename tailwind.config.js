@@ -9,6 +9,10 @@ module.exports = {
         lg: '16px',
         xl: '24px',
       },
+      backgroundImage: {
+        'radial-gradient': 'radial-gradient(circle, #cbd5e1, #64748b)', // Correct syntax for radial gradient
+      },
+  
       colors: {
         customPurple: '#4d3f78',
         customPurpleDark: '#2e2548',
