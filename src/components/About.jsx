@@ -76,7 +76,7 @@ const AboutContact = () => {
             If you’d like to see more of my work or collaborate on a project, feel free to check out{" "}
             <Link
               to="/work"
-              className="text-blue-900 hover:text-blue-700 transition-transform duration-300"
+              className="font-bold text-slate-900 hover:text-blue-700 transition-transform duration-300"
             >
               my portfolio
             </Link>{" "}

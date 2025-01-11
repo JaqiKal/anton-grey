@@ -13,7 +13,7 @@ const Footer = () => {
           href="mailto:atoartworks@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-customPurple hover:text-customPurpleDark transition duration-300"
+          className="text-customPurpleDark hover:text-fuchsia-800 transition duration-300 hover:scale-110"
         >
           <FontAwesomeIcon
             icon={faEnvelope}
@@ -26,7 +26,7 @@ const Footer = () => {
           href="https://www.instagram.com/atoartworks/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-customPurple hover:text-customPurpleDark transition duration-300"
+          className="text-customPurpleDark hover:text-fuchsia-800 transition duration-300 hover:scale-110"
         >
           <FontAwesomeIcon
             icon={faInstagram}
@@ -39,7 +39,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/anton-skogsberg-35701a24b/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-customPurple hover:text-customPurpleDark transition duration-300"
+          className="text-customPurpleDark hover:text-fuchsia-800 transition duration-300 hover:scale-110"
         >
           <FontAwesomeIcon
             icon={faLinkedinIn}
