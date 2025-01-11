@@ -199,16 +199,14 @@ const AboutContact = () => {
             ></textarea>
 
             {/* Character counter */}
-            <div className="flex justify-between items-center">
+            <div className="ml-2">
               {/* Static text */}
-              <p className="text-sm ml-2">Please limit your message to 500 characters.</p>
+
               {/* Dynamic character count */}
               <p
                 className={`text-sm ${
-                  message.length > maxMessageLength - 20
-                    ? "text-red-300" // Red color when 20 or fewer characters are remaining
-                    : message.length > maxMessageLength * 0.8
-                    ? "text-yellow-300" // Yellow color when over 80% of the limit
+                  message.length > maxMessageLength - 30
+                    ? "text-red-800" // Red color when 20 or fewer characters are remaining
                     : "text-slate-900" // Default color
                 }`}
               >
