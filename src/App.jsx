@@ -7,7 +7,7 @@ import Layout from "./components/Layout";
 
 const App = () => {
   return (
-    <Router basename="/anton">
+    <Router basename="/anton-grey">
       <div className="pt-4 pb-4 bg-gradient-to-t from-gray-200 via-slate-400 to-gray-500 ">
         <Routes>
           <Route
