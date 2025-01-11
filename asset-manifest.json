@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/anton-grey/static/css/main.5d0b9d2b.css",
-    "main.js": "/anton-grey/static/js/main.667b9d5f.js",
+    "main.js": "/anton-grey/static/js/main.231e26f2.js",
     "static/js/488.764c9e06.chunk.js": "/anton-grey/static/js/488.764c9e06.chunk.js",
     "static/media/cv-anton-skogsberg.pdf": "/anton-grey/static/media/cv-anton-skogsberg.1d8fdb80e8cc663b2461.pdf",
     "static/media/anton-tini.webp": "/anton-grey/static/media/anton-tini.c82470fa93ba718f81bc.webp",
     "static/media/logo.webp": "/anton-grey/static/media/logo.b75ddcbefdb92703edf8.webp",
     "index.html": "/anton-grey/index.html",
     "main.5d0b9d2b.css.map": "/anton-grey/static/css/main.5d0b9d2b.css.map",
-    "main.667b9d5f.js.map": "/anton-grey/static/js/main.667b9d5f.js.map",
+    "main.231e26f2.js.map": "/anton-grey/static/js/main.231e26f2.js.map",
     "488.764c9e06.chunk.js.map": "/anton-grey/static/js/488.764c9e06.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5d0b9d2b.css",
-    "static/js/main.667b9d5f.js"
+    "static/js/main.231e26f2.js"
   ]
 }
